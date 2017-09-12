@@ -7,6 +7,9 @@ import { FormsModule }   from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {MdDatepickerModule, MdNativeDateModule} from '@angular/material';
+import {DateFnsModule} from 'ngx-date-fns';
+import {AddMinutesPipe} from 'ngx-date-fns/add-minutes.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,9 +20,12 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     BrowserAnimationsModule,
     FormsModule,
     AppRoutingModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    MdDatepickerModule,
+    MdNativeDateModule,
+    DateFnsModule
   ],
-  providers: [],
+  providers: [AddMinutesPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule {
